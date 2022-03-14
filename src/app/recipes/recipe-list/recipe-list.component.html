@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-xs-12">
+
+        <button class="btn btn-success" (click)="navigate()" >New Recipe</button>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-xs-12">
+
+        <app-recipe-item *ngFor="let list of recipes;let i=index" [recipe]="list" [index]="i" >
+        </app-recipe-item>
+
+    </div>
+
+</div>
+
+<!-- (sendItem)="reciveItems(list)" previously used method to get event form item component now replaced by service -->

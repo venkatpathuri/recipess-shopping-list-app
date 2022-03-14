@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-xs-12">
+        <img [src]="sendtodetail.imagepath" alt="{{sendtodetail.name}}" class="image-responsive"
+            style="max-height: 320px;">
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h1>{{sendtodetail.name}}</h1>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        {{sendtodetail.description}}
+        <div class="btn-group" appDropdownDirective>
+            <button type="button" class="btn btn-primary dropdown-toggle">
+                Manage Recipe<span class="caret">
+
+                </span>
+
+            </button>
+            <ul class="dropdown-menu">
+
+                <li><a style="cursor: pointer;" (click)="toShopping()">To shopping List</a></li>
+                <li><a style="cursor: pointer;" (click)="navigate()">Edit Recipe</a></li>
+                <li><a style="cursor: pointer;" (click)="onDelete()" >Delete Recipe</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+<br><br>
+<div class="row">
+    <div class="col-xs-12">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let ingredient of sendtodetail.ingredients">
+                {{ingredient.name}} ({{ingredient.amount}})
+            </li>
+        </ul>
+    </div>
+
+</div>
